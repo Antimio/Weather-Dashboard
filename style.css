@@ -1,0 +1,32 @@
+#search-input {
+    width: 100%;
+}
+
+#search-button {
+    width: 100%;
+    background-color: aqua;
+    margin-top: 15px;
+}
+
+.input-group-append {
+    width: 100%;
+}
+
+#today {
+    border: solid black 2px;
+    height: auto;
+}
+
+#forecast {
+    border: solid black 2px;
+    height: auto;
+}
+
+#history {
+    border: solid black 2px;
+    height: auto;
+}
+
+.row {
+    display: flexbox;
+}
