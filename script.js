@@ -42,3 +42,29 @@ function weatherData(city) {
 
         )
 }
+
+function todayWeather(moreData) {
+    var today = moreData.list[0];
+    console.log(today);
+
+    var todayWeatherContainer = $("#today");
+
+    todayWeatherContainer.empty();
+
+    var name = $("#search-input").val().trim();
+
+    var cityName = $("<h3>").text(name);
+
+    var date = (" (" + dayjs().format("DD/MM/YYYY") + ")");
+
+    var icon = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + today.weather[0].icon + ".png");
+
+    var temp = $("<p>").text("Temp: " + today.main.temp + " °C");
+
+    var wind = $("<p>").text("Wind : " + today.wind.speed + " KPH");
+
+    var humidity = $("<p>").text("Humidity : " + today.main.humidity + " %");
+
+
+    todayWeatherContainer.append(cityName.append(date).append(icon), temp, wind, humidity);
+}
