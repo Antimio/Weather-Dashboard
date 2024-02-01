@@ -132,3 +132,26 @@ function addToHistory(cityName) {
 
     }
 }
+
+$("#history").on("click", ".history-item", function() {
+    var city = $(this).text();
+
+    $("#search-input").val(city)
+
+    weatherData(city);
+
+});
+
+$("#search-button").on("click", function(event) {
+
+    event.preventDefault();
+
+    var cityName = $("#search-input").val().trim();
+
+    if (cityName) {
+        weatherData(cityName);
+    } else {
+        alert("Please enter the name of a city");
+    }
+
+})
