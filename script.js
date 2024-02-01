@@ -104,3 +104,31 @@ function fiveDayForecast(moreData) {
 
 
 }
+
+function addToHistory(cityName) {
+
+    if (!cityHistory.includes(cityName)) {
+
+        if (cityHistory.length >= 8) {
+
+            cityHistory.shift();
+            $("#history .history-item").first().remove();
+        }
+
+        cityHistory.push(cityName);
+
+        localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
+
+        var historyItem = $("<button>").addClass("history-item btn btn-light mb-1").text(cityName);
+
+        historyItem.on("click", function(event) {
+
+            event.preventDefault();
+
+            weatherData(cityName);
+        });
+
+        $("#history").prepend(historyItem);
+
+    }
+}
