@@ -111,8 +111,8 @@ function addToHistory(cityName) {
 
         if (cityHistory.length >= 8) {
 
-            cityHistory.shift();
-            $("#history .history-item").first().remove();
+            cityHistory.pop();
+            $("#history .history-item").last().remove();
         }
 
         cityHistory.push(cityName);
